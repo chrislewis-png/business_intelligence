@@ -1612,8 +1612,34 @@ assignment 4</h2>
 <pre class="r"><code>con = DBI::dbConnect(RSQLite::SQLite(), &quot;../data/midwest_airbnb.db&quot;)
 listings = DBI::dbReadTable(con, &quot;listings&quot;)</code></pre>
 </div>
+<div id="kahoot" class="section level2" number="2">
+<h2><span class="header-section-number">2</span> Kahoot</h2>
+<pre class="r"><code>run = readr::read_csv(&quot;https://isa401-find-your-seat.vercel.app/api/export?section=A&amp;run=13&quot;)</code></pre>
+<pre><code>## Rows: 4 Columns: 10
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr  (5): section, track, seat, table, level_name
+## dbl  (4): run, level, seconds, rank
+## dttm (1): reached_at
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<pre class="r"><code>dplyr::glimpse(run)</code></pre>
+<pre><code>## Rows: 4
+## Columns: 10
+## $ section    &lt;chr&gt; &quot;A&quot;, &quot;A&quot;, &quot;A&quot;, &quot;A&quot;
+## $ run        &lt;dbl&gt; 13, 13, 13, 13
+## $ track      &lt;chr&gt; &quot;opener&quot;, &quot;opener&quot;, &quot;opener&quot;, &quot;opener&quot;
+## $ seat       &lt;chr&gt; &quot;R2-4&quot;, &quot;R2-4&quot;, &quot;R2-4&quot;, &quot;R2-4&quot;
+## $ table      &lt;chr&gt; &quot;R2&quot;, &quot;R2&quot;, &quot;R2&quot;, &quot;R2&quot;
+## $ level      &lt;dbl&gt; 0, 1, 2, 3
+## $ level_name &lt;chr&gt; &quot;seat picked&quot;, &quot;FSB found&quot;, &quot;floor 2&quot;, &quot;arrived&quot;
+## $ reached_at &lt;dttm&gt; 2026-10-09 20:28:56, 2026-10-09 20:43:56, 2026-10-09 20:58:…
+## $ seconds    &lt;dbl&gt; 0, 900, 1765, 2201
+## $ rank       &lt;dbl&gt; NA, NA, NA, 1</code></pre>
+</div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiY2xhc3M2IgphdXRob3I6ICJDaHJpcyBMZXdpcyIKZGF0ZTogIjIwMjYtMTAtMTEiCm91dHB1dDogCiAgaHRtbF9kb2N1bWVudDoKICAgIHRvYzogdHJ1ZQogICAgdG9jX2Zsb2F0OiB0cnVlCiAgICBudW1iZXJfc2VjdGlvbnM6IHRydWUKICAgIGNvZGVfZm9sZGluZzogc2hvdwogICAgY29kZV9kb3dubG9hZDogdHJ1ZQogICAgdGhlbWU6IHNpbXBsZXgKLS0tCgpgYGB7ciBzZXR1cCwgaW5jbHVkZT1GQUxTRX0Ka25pdHI6Om9wdHNfY2h1bmskc2V0KGVjaG8gPSBUUlVFKQpgYGAKCiMjIERhdGEgdXBsb2FkIGZyb20gYXNzaWdubWVudCA0CgpgYGB7cn0KY29uID0gREJJOjpkYkNvbm5lY3QoUlNRTGl0ZTo6U1FMaXRlKCksICIuLi9kYXRhL21pZHdlc3RfYWlyYm5iLmRiIikKbGlzdGluZ3MgPSBEQkk6OmRiUmVhZFRhYmxlKGNvbiwgImxpc3RpbmdzIikKYGBgCgo=</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiY2xhc3M2IgphdXRob3I6ICJDaHJpcyBMZXdpcyIKZGF0ZTogIjIwMjYtMTAtMTEiCm91dHB1dDogCiAgaHRtbF9kb2N1bWVudDoKICAgIHRvYzogdHJ1ZQogICAgdG9jX2Zsb2F0OiB0cnVlCiAgICBudW1iZXJfc2VjdGlvbnM6IHRydWUKICAgIGNvZGVfZm9sZGluZzogc2hvdwogICAgY29kZV9kb3dubG9hZDogdHJ1ZQogICAgdGhlbWU6IHNpbXBsZXgKLS0tCgpgYGB7ciBzZXR1cCwgaW5jbHVkZT1GQUxTRX0Ka25pdHI6Om9wdHNfY2h1bmskc2V0KGVjaG8gPSBUUlVFKQpgYGAKCiMjIERhdGEgdXBsb2FkIGZyb20gYXNzaWdubWVudCA0CgpgYGB7cn0KY29uID0gREJJOjpkYkNvbm5lY3QoUlNRTGl0ZTo6U1FMaXRlKCksICIuLi9kYXRhL21pZHdlc3RfYWlyYm5iLmRiIikKbGlzdGluZ3MgPSBEQkk6OmRiUmVhZFRhYmxlKGNvbiwgImxpc3RpbmdzIikKYGBgCgojIyBLYWhvb3QKCmBgYHtyfQpydW4gPSByZWFkcjo6cmVhZF9jc3YoImh0dHBzOi8vaXNhNDAxLWZpbmQteW91ci1zZWF0LnZlcmNlbC5hcHAvYXBpL2V4cG9ydD9zZWN0aW9uPUEmcnVuPTEzIikKZHBseXI6OmdsaW1wc2UocnVuKQpgYGAKCg==</div>
 
 
 </div>

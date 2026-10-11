@@ -23,3 +23,10 @@ con = DBI::dbConnect(RSQLite::SQLite(), "../data/midwest_airbnb.db")
 listings = DBI::dbReadTable(con, "listings")
 ```
 
+## Kahoot
+
+```{r}
+run = readr::read_csv("https://isa401-find-your-seat.vercel.app/api/export?section=A&run=13")
+dplyr::glimpse(run)
+```
+
