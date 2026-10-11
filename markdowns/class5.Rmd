@@ -1,0 +1,77 @@
+---
+title: "class05"
+author: "Chris Lewis"
+date: "2026-10-11"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    number_sections: true
+    code_folding: show
+    code_download: true
+    theme: simplex
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Game 01: Subsetting Lists
+
+```{r}
+campus = jsonlite::fromJSON(
+  "https://isa401-find-your-seat.vercel.app/campus.json")   # find my seat on campus
+
+names(campus)   #shows names to find name for farmer
+
+fsb = campus$Farmer   #saves a name for farmer, equivelent of 
+fsb$code    #gets code for farmer
+
+names(fsb)
+names(fsb$floors)
+fsb$floors$'2'$sections      # shows 80 sections on floor 2 
+
+sec_floor <- fsb$floors$'2'
+sec_floor_rooms <- sec_floor$rooms  # open data frame to see 2050 has 11 ISA sections 
+
+```
+
+## Reading The Excel File
+
+```{r}
+occupation = readxl::read_excel(
+  path = "../data/occupation.xlsx",
+  sheet = 5, # sheet = "Table 1.4"
+  skip = 1
+)
+
+# '-' when you subset in R, drops these specific things
+# given that they are multiple, I put them in a vector
+# notice the "," after the parantheses
+# nothing after the comma which means all columns
+# instead of that space --> 1:7
+occupation = occupation[-c(32,33,34), ]
+# alternatively
+# occupation = occupation[1:31, ]
+```
+
+## Reading JSON Data
+
+```{r}
+json_url = "https://data.cincinnati-oh.gov/resource/rvmt-pkmq.json?$limit=100"
+crashes_json = jsonlite::fromJSON(json_url)
+dplyr::glimpse(crashes_json)
+```
+
+## Game 2
+
+```{r}
+logins = readr::read_csv("https://isa401-import-heist.vercel.app/api/stage1")   # smithj31
+
+log = jsonlite::fromJSON("https://isa401-import-heist.vercel.app/api/stage2?key=smithj31")
+
+events_df = log$events # 6 files were downloaded
+
+jsonlite::fromJSON("https://isa401-import-heist.vercel.app/api/finish?code=6")
+```
+
