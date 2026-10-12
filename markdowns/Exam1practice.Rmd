@@ -1,5 +1,48 @@
 ---
 title: "Exam1practice"
-output: html_document
+author: "Chris Lewis"
+date: "2026-10-11"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    number_sections: true
+    code_download: true
+    code_folding: show
 ---
+
+## Fall Question 8
+
+```{r}
+# Step 0: Explore the page structure first (this part is just investigation, not the final answer)
+page <- rvest::read_html("https://miamioh.edu/policy-library/students/undergraduate/academic-regulations/index.html")
+
+# Look at all links on the page
+all_links <- page |> rvest::html_elements("a")
+length(all_links)
+
+# Print the first 40 link texts + hrefs to see the pattern
+hrefs <- all_links |> rvest::html_attr("href")
+texts <- all_links |> rvest::html_text(trim = TRUE)
+
+df <- data.frame(text = texts, href = hrefs)
+head(df, 40)
+```
+
+## Fall Question 4-6
+
+```{r}
+data <- jsonlite::fromJSON("../data/hibp_data.json")    # read json
+dplyr::glimpse(data)   # rows show amount of observations
+
+data[500, 2] # 500th row, 2nd column
+
+## to look for certain strings open data and filter
+```
+
+## Fall Question 11
+
+```{r}
+
+```
 
